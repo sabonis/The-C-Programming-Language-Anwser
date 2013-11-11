@@ -8,8 +8,8 @@ main()
 {
 	int c, i, state = OUT;
 	int wordCounts[MAXWORD]; // words array
-	int wordLenth;   		 // lenth of a word
-	int overflow = 0; 		 // number of overflow words
+	int wordLenth;			 // lenth of a word
+	int overflow = 0;		 // number of overflow words
 
 	/* initialization */
 	for(i = 0; i < MAXWORD; i++) {

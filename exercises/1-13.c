@@ -1,14 +1,17 @@
 #include<stdio.h>
 
-#define IN      0  // inside a word
-#define OUT     1  // outsid a word
-#define MAXWORD 10 // max word lenth
+#define IN      0       // inside a word
+#define OUT     1       // outsid a word
+#define MAXWORD 10      // max word lenth
+#define MAXHISTOGRAM 15 // max histogram lenth
 
 main()
 {
 	int c, i, state = OUT;
 	int wordCounts[MAXWORD]; // words array
 	int wordLenth;           // lenth of a word
+    int len = 0;             // lenth of histogram
+    int maxValue = 0;        // max value of words
 	int overflow = 0;        // number of overflow words
 
 	/* initialization */
@@ -38,8 +41,24 @@ main()
 		}
 	}
 
+    /* find max value */
+	for (i = 0; i < MAXWORD; i++) {
+        if(wordCounts[i] > maxValue)
+            maxValue = wordCounts[i];
+    }
+
 	/* output */
 	for (i = 1; i < MAXWORD; i++) {
-		printf("%5d - %5d \n", i, wordCounts[i]);
+		printf("%5d - %5d :", i, wordCounts[i]);
+        if (wordCounts[i] > 0) {
+            len = wordCounts[i] * MAXHISTOGRAM / maxValue;
+        } else {
+            len = 1;
+        }
+        while (len > 0) {
+            putchar('*');
+            --len;
+        }
+        putchar('\n');
 	}
 }

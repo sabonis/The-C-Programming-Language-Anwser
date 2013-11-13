@@ -5,7 +5,6 @@
 
 /* sorry for my java accent*/
 int getCleanLine(char line[], int maxline);
-void copy(char to[], char from[]);
 
 int main() {
     int len;
@@ -38,11 +37,5 @@ int getCleanLine(char line[], int maxline) {
             line[i] = '\0';
             return i;
         }
-    }
-}
-void copy(char to[], char from[]) {
-    int i;
-    while ((to[i] = from[i]) != '\0') {
-        ++i;
     }
 }

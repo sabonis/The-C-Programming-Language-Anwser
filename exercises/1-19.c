@@ -1,14 +1,13 @@
 #include <stdio.h>
 
 #define MAXLINE  1000
-#define LONGLINE 80
 
 int getLine2(char line[]);
 int reverse(char line[]);
 int main() {
     char line[MAXLINE]; // store line here
 
-    while (getLine2(line) >= 0) {
+    while (getLine2(line) > 0) {
         reverse(line);
         printf("%s", line);
     }
@@ -18,7 +17,6 @@ int reverse(char line[]) {
     int i = 0, j = 0;
     char tmp;
  
-    // copy array
     while (line[i] != '\0') {
         ++i;
     }
@@ -45,7 +43,6 @@ int getLine2(char line[]) {
         ++i;
     }
     line[i] = '\0';
-    ++i;
     return i;
 }
 

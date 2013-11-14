@@ -16,7 +16,7 @@ int main() {
 int reverse(char line[]) {
     int i = 0, j = 0;
     char tmp;
- 
+
     while (line[i] != '\0') {
         ++i;
     }
@@ -45,4 +45,3 @@ int getLine2(char line[]) {
     line[i] = '\0';
     return i;
 }
-
